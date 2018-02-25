@@ -23,6 +23,9 @@ bool Pong::OnOneTimeInit()
 
 void Pong::OnNewGame()
 {
+	std::string right("R");
+	std::string left("L");
+
 	ThePlayers[0].Init();
 	ThePlayers[0].SetSide(Player::Side_Left);
 
@@ -159,11 +162,13 @@ void Pong::UpdateScore()
 	if (TheBall.OutOfBoundsSide() == Player::Side_Left)
 	{
 		Score[1]++;
+		serialInterface->ledFlash("R");
 	}
 
 	if (TheBall.OutOfBoundsSide() == Player::Side_Right)
 	{
 		Score[0]++;
+		serialInterface->ledFlash("L");
 	}
 }
 

@@ -60,6 +60,16 @@ void SerialInterface::getPositions()
 	}
 }
 
+void SerialInterface::ledFlash(std::string input)
+{
+	if (connect)
+	{
+		mySerial->write(input);
+
+		//std::string result = mySerial->readline();
+	}
+}
+
 void SerialInterface::close()
 {
 	mySerial->flush();

@@ -14,6 +14,8 @@ public:
 	void send(std::string msg);
 	void getPositions();
 
+	void ledFlash(std::string input);
+
 	int getPot1() { return pot1; };
 	int getPot2() { return pot2; };
 
